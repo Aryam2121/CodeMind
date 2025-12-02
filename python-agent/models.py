@@ -34,7 +34,18 @@ class QueryRequest(BaseModel):
         default=None,
         description="Specific agents to use: document, gis, summary, compliance"
     )
-    filters: Optional[Dict[str, Any]] = None
+    filters: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Metadata filters: file_type, repo_url, source, tags, etc."
+    )
+    search_mode: str = Field(
+        default="hybrid",
+        description="Search mode: 'semantic', 'keyword', or 'hybrid'"
+    )
+    include_context: bool = Field(
+        default=True,
+        description="Include conversation context in search"
+    )
 
 
 class Source(BaseModel):
