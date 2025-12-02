@@ -461,6 +461,6 @@ If you find CodeMind useful, please give it a ⭐ on GitHub!
 
 ---
 
-**Built with ❤️ by developers, for developers**
+**Built with ❤️ by Aryaman, for developers**
 
 *Powered by RAG • LangChain • OpenAI • FastAPI • Next.js*
