@@ -1,0 +1,63 @@
+Municipal Water Supply SOP
+Document ID: SOP-2024-WS-001
+Effective Date: January 1, 2024
+
+1. WATER QUALITY STANDARDS
+
+All water supplied to citizens must meet WHO drinking water quality standards.
+
+1.1 Testing Requirements
+- Daily testing: pH, turbidity, chlorine levels
+- Weekly testing: Bacteriological parameters
+- Monthly testing: Heavy metals, pesticides
+- Quarterly testing: Comprehensive chemical analysis
+
+1.2 Acceptable Ranges
+- pH: 6.5 - 8.5
+- Turbidity: < 5 NTU
+- Residual Chlorine: 0.2 - 0.5 mg/L
+- Total Coliform: 0 CFU/100mL
+
+2. COMPLAINT HANDLING
+
+2.1 Response Timeline
+- Acknowledgment: Within 2 hours of complaint
+- Inspection: Within 24 hours
+- Resolution: Within 3-5 business days
+- Critical issues: Within 12 hours
+
+2.2 Complaint Categories
+- No water supply
+- Low pressure
+- Water quality issues
+- Pipe leakage
+- Meter problems
+
+3. MAINTENANCE SCHEDULE
+
+3.1 Regular Maintenance
+- Tank cleaning: Every 6 months
+- Pipeline inspection: Quarterly
+- Pump maintenance: Monthly
+- Valve testing: Bi-annually
+
+3.2 Emergency Procedures
+In case of pipeline burst:
+1. Isolate affected section immediately
+2. Notify residents via SMS/loudspeaker
+3. Deploy tankers for temporary supply
+4. Repair within 24 hours
+5. Test water quality before restoration
+
+4. COMPLIANCE
+
+All personnel must:
+- Follow standard operating procedures
+- Document all actions
+- Report issues immediately
+- Maintain cleanliness standards
+- Complete mandatory training annually
+
+Violations may result in disciplinary action.
+
+END OF DOCUMENT

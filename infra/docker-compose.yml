@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # Python Agent Service
+  python-agent:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.agent
+    container_name: smart-city-agent
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - USE_MOCK_LLM=${USE_MOCK_LLM:-false}
+      - CHROMA_DB_DIR=/app/chroma_db
+      - PYTHON_AGENT_PORT=8000
+    volumes:
+      - agent-data:/app/chroma_db
+      - ../test-data:/app/test-data:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.frontend
+    container_name: smart-city-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - PYTHON_AGENT_URL=http://python-agent:8000
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:3000
+    depends_on:
+      - python-agent
+    restart: unless-stopped
+
+volumes:
+  agent-data:
+    driver: local
+
+networks:
+  default:
+    name: smart-city-network

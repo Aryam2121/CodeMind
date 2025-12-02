@@ -1,0 +1,30 @@
+{
+  "name": "smart-city-ai-assistant",
+  "version": "1.0.0",
+  "description": "Smart City Unified AI Knowledge Assistant with Multi-Agent RAG",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:agent\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:agent": "cd python-agent && python app.py",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm start",
+    "test": "npm run test:frontend && npm run test:agent",
+    "test:frontend": "cd frontend && npm test",
+    "test:agent": "cd python-agent && pytest",
+    "lint": "cd frontend && npm run lint",
+    "docker:up": "docker-compose -f infra/docker-compose.yml up",
+    "docker:down": "docker-compose -f infra/docker-compose.yml down",
+    "docker:build": "docker-compose -f infra/docker-compose.yml build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

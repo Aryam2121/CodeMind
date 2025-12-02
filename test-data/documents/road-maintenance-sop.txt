@@ -1,0 +1,71 @@
+Road Maintenance SOP
+Document ID: SOP-2024-RM-002
+Effective Date: January 1, 2024
+
+1. POTHOLE REPAIR GUIDELINES
+
+1.1 Priority Classification
+- Priority 1 (Critical): Major roads, high traffic, safety hazard
+  Timeline: 48 hours
+- Priority 2 (High): Arterial roads, moderate traffic
+  Timeline: 7 business days  
+- Priority 3 (Medium): Local streets, low traffic
+  Timeline: 15 business days
+
+1.2 Repair Standards
+- Minimum patch size: 30cm x 30cm
+- Depth: Match existing road level
+- Materials: Cold mix (temporary), hot mix (permanent)
+- Compaction: 95% standard Proctor density
+- Curing time: 24 hours before opening to traffic
+
+2. INSPECTION AND REPORTING
+
+2.1 Regular Inspections
+- Major roads: Weekly
+- Arterial roads: Bi-weekly
+- Local streets: Monthly
+
+2.2 Citizen Complaints
+- Online portal available 24/7
+- Mobile app for photo uploads
+- Helpline: 1800-XXX-XXXX
+- Response within 24 hours
+
+3. MONSOON PREPAREDNESS
+
+3.1 Pre-Monsoon Activities (May-June)
+- Clear all drainage channels
+- Fill existing potholes
+- Stockpile repair materials
+- Deploy emergency response teams
+
+3.2 During Monsoon
+- Daily inspections of critical roads
+- 24-hour emergency team on standby
+- Temporary repairs as needed
+- Permanent repairs post-monsoon
+
+4. CONTRACTOR MANAGEMENT
+
+4.1 Quality Standards
+- All contractors must be certified
+- Regular quality audits
+- Penalty clauses for delays
+- Performance bonds mandatory
+
+4.2 Payment Terms
+- 70% on completion
+- 20% after 30-day inspection
+- 10% after 90-day defect liability period
+
+5. COMPLIANCE REQUIREMENTS
+
+Non-compliance with timelines may result in:
+- Written warning (1st offense)
+- Suspension of duties (2nd offense)
+- Termination (3rd offense)
+
+All repairs must be documented with before/after photos.
+
+END OF DOCUMENT

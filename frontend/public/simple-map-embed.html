@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Embed</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        #map { height: 100%; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        let map, markersLayer;
+
+        function initMap() {
+            map = L.map('map').setView([12.9716, 77.5946], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+            markersLayer = L.layerGroup().addTo(map);
+        }
+
+        async function loadComplaints() {
+            try {
+                const response = await fetch('/api/complaints');
+                const complaints = await response.json();
+                
+                complaints.forEach(complaint => {
+                    const marker = L.marker([complaint.lat, complaint.lon])
+                        .bindPopup(`
+                            <div style="min-width: 200px;">
+                                <h3 style="margin: 0 0 8px 0; font-size: 16px; color: #1f2937;">${complaint.type}</h3>
+                                <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">${complaint.description}</p>
+                                <div style="font-size: 13px; color: #4b5563;">
+                                    <div><strong>Ward:</strong> ${complaint.ward}</div>
+                                    <div><strong>Date:</strong> ${complaint.date}</div>
+                                    <div><strong>Status:</strong> <span style="color: ${complaint.status === 'open' ? '#f59e0b' : '#10b981'}; font-weight: 600;">${complaint.status.toUpperCase()}</span></div>
+                                </div>
+                            </div>
+                        `);
+                    markersLayer.addLayer(marker);
+                });
+            } catch (error) {
+                console.error('Error loading complaints:', error);
+            }
+        }
+
+        initMap();
+        loadComplaints();
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+id,lat,lon,type,ward,date,description,status
+1,12.9716,77.5946,Pothole,Ward 12,2024-11-15,Large pothole on main road near signal,open
+2,12.9750,77.5980,Street Light,Ward 12,2024-11-20,Street light not working since 3 days,open
+3,12.9700,77.5920,Water Supply,Ward 11,2024-11-25,Low water pressure in morning hours,resolved
+4,12.9800,77.6000,Garbage,Ward 13,2024-11-28,Garbage not collected for 2 days,open
+5,12.9680,77.5900,Pothole,Ward 11,2024-12-01,Deep pothole causing accidents,open
+6,12.9730,77.5960,Water Supply,Ward 12,2024-12-02,No water supply since yesterday,open
+7,12.9820,77.6020,Street Light,Ward 13,2024-11-18,Multiple street lights not working,resolved
+8,12.9690,77.5910,Drainage,Ward 11,2024-11-22,Blocked drainage causing flooding,open
+9,12.9760,77.5990,Pothole,Ward 12,2024-11-30,Multiple potholes on service road,open
+10,12.9810,77.6010,Garbage,Ward 13,2024-12-01,Overflowing garbage bin,open
+11,12.9670,77.5880,Street Light,Ward 11,2024-11-19,Street light fallen due to wind,resolved
+12,12.9740,77.5970,Water Supply,Ward 12,2024-11-27,Dirty water supply reported,resolved
+13,12.9790,77.5950,Pothole,Ward 12,2024-11-29,Pothole near school entrance,open
+14,12.9830,77.6030,Drainage,Ward 13,2024-11-26,Manhol cover missing dangerous,open
+15,12.9660,77.5890,Garbage,Ward 11,2024-11-24,Illegal dumping on roadside,resolved

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City AI - Visual User Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .page-card {
+            background: white;
+            border: 3px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        
+        .page-card.blue { border-left: 6px solid #3b82f6; }
+        .page-card.green { border-left: 6px solid #10b981; }
+        .page-card.purple { border-left: 6px solid #8b5cf6; }
+        .page-card.orange { border-left: 6px solid #f59e0b; }
+        
+        .page-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .page-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+        
+        .page-card .url {
+            background: #f3f4f6;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        
+        .page-card .description {
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+        
+        .page-card .action {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .page-card .action:hover {
+            transform: scale(1.05);
+        }
+        
+        .quickstart {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .quickstart h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .step {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid white;
+        }
+        
+        .step-number {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .examples {
+            background: #fef3c7;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #f59e0b;
+        }
+        
+        .examples h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+        
+        .example-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            color: #1f2937;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .example-item:hover {
+            background: #f59e0b;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .tip-box {
+            background: #dbeafe;
+            border-left: 5px solid #3b82f6;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .tip-box h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏙️ Smart City AI Assistant</h1>
+        <p class="subtitle">Visual User Guide - Click on any card to open that page</p>
+        
+        <div class="quickstart">
+            <h2>🚀 Absolute Beginner? Start Here!</h2>
+            <div class="step">
+                <span class="step-number">STEP 1:</span> Click the blue "AI Chat" card below
+            </div>
+            <div class="step">
+                <span class="step-number">STEP 2:</span> Type this question: <strong>"What are the water quality standards?"</strong>
+            </div>
+            <div class="step">
+                <span class="step-number">STEP 3:</span> Press Enter and watch the AI respond with an answer!
+            </div>
+            <div class="step">
+                <span class="step-number">That's it!</span> You just used AI to query city policy documents 🎉
+            </div>
+        </div>
+        
+        <h2 style="margin-bottom: 20px; color: #1f2937;">📱 Your 4 Pages</h2>
+        
+        <div class="page-grid">
+            <!-- Chat Page -->
+            <div class="page-card blue" onclick="window.open('http://localhost:3000/chat', '_blank')">
+                <div class="page-number">1</div>
+                <h2>💬 AI Chat</h2>
+                <div class="url">localhost:3000/chat</div>
+                <div class="description">
+                    Ask questions and get AI-powered answers from your city policy documents.
+                </div>
+                <strong>What to do:</strong>
+                <ul style="margin: 10px 0 15px 20px; color: #4b5563;">
+                    <li>Type your question</li>
+                    <li>Press Enter</li>
+                    <li>Read AI's response</li>
+                </ul>
+                <a href="http://localhost:3000/chat" class="action" target="_blank">Open Chat →</a>
+            </div>
+            
+            <!-- Map Page -->
+            <div class="page-card green" onclick="window.open('http://localhost:3000/map', '_blank')">
+                <div class="page-number">2</div>
+                <h2>🗺️ Map View</h2>
+                <div class="url">localhost:3000/map</div>
+                <div class="description">
+                    See all citizen complaints on an interactive map. Click markers for details.
+                </div>
+                <strong>What to do:</strong>
+                <ul style="margin: 10px 0 15px 20px; color: #4b5563;">
+                    <li>View complaint markers</li>
+                    <li>Click markers for info</li>
+                    <li>Use filters at top</li>
+                </ul>
+                <a href="http://localhost:3000/map" class="action" target="_blank">Open Map →</a>
+            </div>
+            
+            <!-- Documents Page -->
+            <div class="page-card purple" onclick="window.open('http://localhost:3000/documents', '_blank')">
+                <div class="page-number">3</div>
+                <h2>📄 Documents</h2>
+                <div class="url">localhost:3000/documents</div>
+                <div class="description">
+                    Upload policy documents (PDF, Word, TXT) to make them searchable by AI.
+                </div>
+                <strong>What to do:</strong>
+                <ul style="margin: 10px 0 15px 20px; color: #4b5563;">
+                    <li>Click "Choose File"</li>
+                    <li>Select your document</li>
+                    <li>Click "Upload"</li>
+                </ul>
+                <a href="http://localhost:3000/documents" class="action" target="_blank">Upload Docs →</a>
+            </div>
+            
+            <!-- Dashboard Page -->
+            <div class="page-card orange" onclick="window.open('http://localhost:3000/dashboard', '_blank')">
+                <div class="page-number">4</div>
+                <h2>📊 Dashboard</h2>
+                <div class="url">localhost:3000/dashboard</div>
+                <div class="description">
+                    View system statistics, document count, and check if everything is running.
+                </div>
+                <strong>What to do:</strong>
+                <ul style="margin: 10px 0 15px 20px; color: #4b5563;">
+                    <li>View stats</li>
+                    <li>Check system status</li>
+                    <li>Monitor uptime</li>
+                </ul>
+                <a href="http://localhost:3000/dashboard" class="action" target="_blank">View Stats →</a>
+            </div>
+        </div>
+        
+        <div class="examples">
+            <h3>💡 Example Questions to Ask in Chat</h3>
+            <div class="example-item" onclick="copyText(this.textContent)">
+                "What are the water quality standards?"
+            </div>
+            <div class="example-item" onclick="copyText(this.textContent)">
+                "How long does it take to repair potholes?"
+            </div>
+            <div class="example-item" onclick="copyText(this.textContent)">
+                "What is the procedure for handling water complaints?"
+            </div>
+            <div class="example-item" onclick="copyText(this.textContent)">
+                "How often should water tanks be cleaned?"
+            </div>
+            <div class="example-item" onclick="copyText(this.textContent)">
+                "Show me all complaints in Ward 1"
+            </div>
+            <p style="margin-top: 15px; color: #92400e; font-style: italic;">
+                💡 Tip: Click any example to copy it, then paste in the chat!
+            </p>
+        </div>
+        
+        <div class="tip-box">
+            <h3>🎯 Pro Tip: Try This Right Now!</h3>
+            <p style="color: #1e3a8a;">
+                1. Click the <strong>"Open Chat"</strong> button on the blue card above<br>
+                2. Copy this question: <code style="background: white; padding: 3px 6px; border-radius: 4px;">"What are the water quality standards?"</code><br>
+                3. Paste it in the chat box and press Enter<br>
+                4. Watch the AI respond with information from the Water Supply SOP document!
+            </p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f9fafb; border-radius: 10px;">
+            <h3 style="color: #1f2937; margin-bottom: 15px;">Need More Help?</h3>
+            <p style="color: #6b7280; margin-bottom: 15px;">
+                📖 <strong>Detailed Guide:</strong> <code>d:\AI-Agent\USER_GUIDE.md</code>
+            </p>
+            <p style="color: #6b7280;">
+                🔧 <strong>API Docs:</strong> <a href="http://localhost:8000/docs" target="_blank" style="color: #667eea;">http://localhost:8000/docs</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function copyText(text) {
+            // Clean the text
+            text = text.replace(/^"|"$/g, '').trim();
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard! Now paste it in the chat.');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('Copied to clipboard! Now paste it in the chat.');
+            });
+        }
+    </script>
+</body>
+</html>

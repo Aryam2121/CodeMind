@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Map Test - Complaints Viewer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .header {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            color: #1f2937;
+        }
+        
+        .stats {
+            background: #f3f4f6;
+            padding: 12px 20px;
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+        }
+        
+        .stat {
+            color: #6b7280;
+        }
+        
+        .stat strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        #map {
+            height: calc(100vh - 120px);
+            width: 100%;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .filters select {
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background: white;
+            font-size: 14px;
+        }
+        
+        .marker-popup {
+            min-width: 200px;
+        }
+        
+        .marker-popup h3 {
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .marker-popup .description {
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+        
+        .marker-popup .detail {
+            font-size: 13px;
+            color: #4b5563;
+            margin: 4px 0;
+        }
+        
+        .status-open {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+        
+        .status-resolved {
+            color: #10b981;
+            font-weight: 600;
+        }
+        
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-size: 16px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗺️ Complaints Map</h1>
+        <div class="filters">
+            <select id="typeFilter">
+                <option value="all">All Types</option>
+            </select>
+            <select id="wardFilter">
+                <option value="all">All Wards</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="stats">
+        <div class="stat">Total: <strong id="totalCount">0</strong></div>
+        <div class="stat">Open: <strong id="openCount" style="color: #f59e0b;">0</strong></div>
+        <div class="stat">Resolved: <strong id="resolvedCount" style="color: #10b981;">0</strong></div>
+    </div>
+    
+    <div id="map"></div>
+    <div id="loading" class="loading">Loading complaints...</div>
+
+    <script>
+        let allComplaints = [];
+        let map;
+        let markersLayer;
+
+        // Initialize map
+        function initMap() {
+            map = L.map('map').setView([12.9716, 77.5946], 13);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            markersLayer = L.layerGroup().addTo(map);
+        }
+
+        // Fetch complaints
+        async function fetchComplaints() {
+            try {
+                const response = await fetch('http://localhost:3000/api/complaints');
+                const data = await response.json();
+                allComplaints = data;
+                
+                document.getElementById('loading').style.display = 'none';
+                
+                populateFilters();
+                displayComplaints();
+                updateStats();
+            } catch (error) {
+                document.getElementById('loading').innerHTML = 
+                    '<div style="color: #ef4444;">❌ Error loading complaints<br><small>' + error.message + '</small></div>';
+                console.error('Error:', error);
+            }
+        }
+
+        // Populate filter dropdowns
+        function populateFilters() {
+            const types = [...new Set(allComplaints.map(c => c.type))];
+            const wards = [...new Set(allComplaints.map(c => c.ward))];
+            
+            const typeFilter = document.getElementById('typeFilter');
+            types.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                typeFilter.appendChild(option);
+            });
+            
+            const wardFilter = document.getElementById('wardFilter');
+            wards.forEach(ward => {
+                const option = document.createElement('option');
+                option.value = ward;
+                option.textContent = ward;
+                wardFilter.appendChild(option);
+            });
+        }
+
+        // Display complaints on map
+        function displayComplaints() {
+            markersLayer.clearLayers();
+            
+            const typeFilter = document.getElementById('typeFilter').value;
+            const wardFilter = document.getElementById('wardFilter').value;
+            
+            const filtered = allComplaints.filter(c => {
+                return (typeFilter === 'all' || c.type === typeFilter) &&
+                       (wardFilter === 'all' || c.ward === wardFilter);
+            });
+            
+            filtered.forEach(complaint => {
+                const marker = L.marker([complaint.lat, complaint.lon])
+                    .bindPopup(`
+                        <div class="marker-popup">
+                            <h3>${complaint.type}</h3>
+                            <div class="description">${complaint.description}</div>
+                            <div class="detail"><strong>ID:</strong> ${complaint.id}</div>
+                            <div class="detail"><strong>Ward:</strong> ${complaint.ward}</div>
+                            <div class="detail"><strong>Date:</strong> ${complaint.date}</div>
+                            <div class="detail">
+                                <strong>Status:</strong> 
+                                <span class="status-${complaint.status}">${complaint.status.toUpperCase()}</span>
+                            </div>
+                        </div>
+                    `);
+                
+                markersLayer.addLayer(marker);
+            });
+            
+            updateStats(filtered);
+        }
+
+        // Update statistics
+        function updateStats(filtered = allComplaints) {
+            document.getElementById('totalCount').textContent = filtered.length;
+            document.getElementById('openCount').textContent = 
+                filtered.filter(c => c.status === 'open').length;
+            document.getElementById('resolvedCount').textContent = 
+                filtered.filter(c => c.status === 'resolved').length;
+        }
+
+        // Event listeners
+        document.getElementById('typeFilter').addEventListener('change', displayComplaints);
+        document.getElementById('wardFilter').addEventListener('change', displayComplaints);
+
+        // Initialize
+        initMap();
+        fetchComplaints();
+    </script>
+</body>
+</html>
