@@ -32,32 +32,32 @@ export async function GET() {
       return NextResponse.json([
         {
           id: '1',
-          lat: 12.9716,
-          lon: 77.5946,
+          lat: 28.6692,
+          lon: 77.4538,
           type: 'Pothole',
-          ward: 'Ward 12',
+          ward: 'Vasundhara',
           date: '2024-11-15',
-          description: 'Large pothole on main road',
+          description: 'Large pothole on NH-24 near DLF crossing',
           status: 'open'
         },
         {
           id: '2',
-          lat: 12.9750,
-          lon: 77.5980,
+          lat: 28.6644,
+          lon: 77.4394,
           type: 'Street Light',
-          ward: 'Ward 12',
+          ward: 'Raj Nagar',
           date: '2024-11-20',
-          description: 'Street light not working',
+          description: 'Street light not working on main road',
           status: 'open'
         },
         {
           id: '3',
-          lat: 12.9700,
-          lon: 77.5920,
+          lat: 28.6702,
+          lon: 77.4412,
           type: 'Water Supply',
-          ward: 'Ward 11',
+          ward: 'Indirapuram',
           date: '2024-11-25',
-          description: 'Low water pressure',
+          description: 'Low water pressure in Sector 62',
           status: 'resolved'
         }
       ])

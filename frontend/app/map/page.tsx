@@ -60,15 +60,16 @@ export default function MapPage() {
   const wards = Array.from(new Set(complaints.map(c => c.ward)))
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <div className="fixed inset-0 flex flex-col">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link href="/">
-              <Home className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+      <header className="bg-white shadow-sm border-b flex-shrink-0">
+        <div className="px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Link href="/" className="hover:scale-110 transition-transform">
+              <Home className="w-5 h-5 text-gray-600 hover:text-blue-600 cursor-pointer" />
             </Link>
-            <h1 className="text-2xl font-bold text-gray-900">Complaints Map</h1>
+            <span className="text-2xl">🗺️</span>
+            <h1 className="text-xl font-bold text-gray-900">Map View</h1>
           </div>
           
           <div className="flex items-center gap-4">
@@ -101,8 +102,8 @@ export default function MapPage() {
       </header>
 
       {/* Stats */}
-      <div className="bg-white border-b px-4 py-3">
-        <div className="max-w-7xl mx-auto flex gap-6 text-sm">
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b px-4 py-2 flex-shrink-0">
+        <div className="flex gap-6 text-sm">
           <div>
             <span className="text-gray-600">Total: </span>
             <span className="font-semibold text-gray-900">{filteredComplaints.length}</span>
@@ -122,8 +123,8 @@ export default function MapPage() {
         </div>
       </div>
 
-      {/* Map */}
-      <div className="flex-1 relative">
+      {/* Map - Full Screen */}
+      <div className="flex-1 relative overflow-hidden">
         {isLoading ? (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
             <div className="text-gray-600 text-lg">Loading map...</div>
@@ -131,7 +132,7 @@ export default function MapPage() {
         ) : (
           <iframe 
             src="/simple-map-embed.html" 
-            style={{ width: '100%', height: '100%', border: 'none' }}
+            className="absolute inset-0 w-full h-full border-0"
             title="Complaints Map"
           />
         )}

@@ -28,7 +28,7 @@ interface MapComponentProps {
 }
 
 export default function MapComponent({ complaints }: MapComponentProps) {
-  const center: [number, number] = [12.9716, 77.5946]
+  const center: [number, number] = [28.6692, 77.4538]
 
   return (
     <MapContainer

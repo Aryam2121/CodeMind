@@ -1,16 +1,61 @@
 id,lat,lon,type,ward,date,description,status
-1,12.9716,77.5946,Pothole,Ward 12,2024-11-15,Large pothole on main road near signal,open
-2,12.9750,77.5980,Street Light,Ward 12,2024-11-20,Street light not working since 3 days,open
-3,12.9700,77.5920,Water Supply,Ward 11,2024-11-25,Low water pressure in morning hours,resolved
-4,12.9800,77.6000,Garbage,Ward 13,2024-11-28,Garbage not collected for 2 days,open
-5,12.9680,77.5900,Pothole,Ward 11,2024-12-01,Deep pothole causing accidents,open
-6,12.9730,77.5960,Water Supply,Ward 12,2024-12-02,No water supply since yesterday,open
-7,12.9820,77.6020,Street Light,Ward 13,2024-11-18,Multiple street lights not working,resolved
-8,12.9690,77.5910,Drainage,Ward 11,2024-11-22,Blocked drainage causing flooding,open
-9,12.9760,77.5990,Pothole,Ward 12,2024-11-30,Multiple potholes on service road,open
-10,12.9810,77.6010,Garbage,Ward 13,2024-12-01,Overflowing garbage bin,open
-11,12.9670,77.5880,Street Light,Ward 11,2024-11-19,Street light fallen due to wind,resolved
-12,12.9740,77.5970,Water Supply,Ward 12,2024-11-27,Dirty water supply reported,resolved
-13,12.9790,77.5950,Pothole,Ward 12,2024-11-29,Pothole near school entrance,open
-14,12.9830,77.6030,Drainage,Ward 13,2024-11-26,Manhol cover missing dangerous,open
-15,12.9660,77.5890,Garbage,Ward 11,2024-11-24,Illegal dumping on roadside,resolved
+1,28.6692,77.4538,Pothole,Vasundhara,2024-11-15,Large pothole on NH-24 near DLF crossing,open
+2,28.6644,77.4394,Street Light,Raj Nagar,2024-11-20,Street light not working on main road,open
+3,28.6702,77.4412,Water Supply,Indirapuram,2024-11-25,Low water pressure in Sector 62,resolved
+4,28.6588,77.4219,Garbage,Vaishali,2024-11-28,Garbage not collected near metro station,open
+5,28.6728,77.4502,Pothole,Vasundhara,2024-12-01,Deep pothole causing accidents on Ring Road,open
+6,28.6656,77.4428,Water Supply,Raj Nagar,2024-12-02,No water supply in Sector 3A since yesterday,open
+7,28.6718,77.4478,Street Light,Indirapuram,2024-11-18,Multiple street lights not working in Ahinsa Khand,resolved
+8,28.6612,77.4356,Drainage,Vaishali,2024-11-22,Blocked drainage causing flooding in Sector 4,open
+9,28.6680,77.4464,Pothole,Raj Nagar,2024-11-30,Multiple potholes on service road near Shipra Mall,open
+10,28.6598,77.4288,Garbage,Vaishali,2024-12-01,Overflowing garbage bin at sector park,open
+11,28.6708,77.4492,Street Light,Vasundhara,2024-11-19,Street light fallen due to wind near sector 13,resolved
+12,28.6668,77.4442,Water Supply,Raj Nagar,2024-11-27,Dirty water supply reported in Sector 7,resolved
+13,28.6698,77.4518,Pothole,Vasundhara,2024-11-29,Pothole near DPS school entrance,open
+14,28.6578,77.4202,Drainage,Vaishali,2024-11-26,Manhole cover missing dangerous situation,open
+15,28.6722,77.4456,Garbage,Indirapuram,2024-11-24,Illegal dumping on roadside near Habitat Centre,resolved
+16,28.6652,77.4382,Pothole,Raj Nagar,2024-12-03,Road cracks near Mahagun Mall,open
+17,28.6688,77.4508,Street Light,Vasundhara,2024-12-02,Dim street lights in Sector 16,open
+18,28.6608,77.4312,Water Supply,Vaishali,2024-11-29,Water leakage from main pipeline,open
+19,28.6738,77.4528,Garbage,Vasundhara,2024-12-01,Stray animals spreading garbage near market,open
+20,28.6628,77.4368,Drainage,Vaishali,2024-11-28,Sewage overflow on main road,open
+21,28.6678,77.4448,Pothole,Indirapuram,2024-12-02,Broken road surface near Wave City Center,open
+22,28.6748,77.4548,Street Light,Vasundhara,2024-11-26,All street lights off in residential colony,resolved
+23,28.6618,77.4328,Water Supply,Vaishali,2024-12-01,Contaminated water complaint in Sector 6,open
+24,28.6662,77.4418,Garbage,Raj Nagar,2024-11-30,Garbage collection vehicle not coming regularly,open
+25,28.6712,77.4482,Pothole,Indirapuram,2024-11-27,Speed breaker damaged causing accidents,open
+26,28.6588,77.4248,Drainage,Vaishali,2024-12-03,Rainwater accumulation near mall,open
+27,28.6732,77.4512,Street Light,Vasundhara,2024-11-23,Street light pole tilted dangerous,open
+28,28.6642,77.4398,Water Supply,Raj Nagar,2024-11-25,No water for 3 days in Pocket D,resolved
+29,28.6692,77.4468,Garbage,Indirapuram,2024-12-02,Dog bite due to stray animals near garbage,open
+30,28.6608,77.4272,Pothole,Vaishali,2024-11-28,Entire stretch of road damaged,open
+31,28.6718,77.4498,Street Light,Vasundhara,2024-12-01,Solar lights not charging properly,open
+32,28.6648,77.4408,Drainage,Raj Nagar,2024-11-29,Blocked drain causing mosquito breeding,open
+33,28.6628,77.4338,Water Supply,Vaishali,2024-11-26,Burst water pipe flooding street,resolved
+34,28.6688,77.4458,Garbage,Indirapuram,2024-12-03,Construction debris dumped illegally,open
+35,28.6758,77.4558,Pothole,Vasundhara,2024-11-24,Pothole causing traffic jam daily,open
+36,28.6598,77.4258,Street Light,Vaishali,2024-12-02,Entire street dark at night unsafe,open
+37,28.6672,77.4432,Water Supply,Raj Nagar,2024-11-27,Water motor not working community issue,open
+38,28.6708,77.4488,Garbage,Indirapuram,2024-11-30,Garbage bins stolen need replacement,open
+39,28.6638,77.4388,Drainage,Raj Nagar,2024-12-01,Sewer line broken foul smell,open
+40,28.6698,77.4478,Pothole,Vasundhara,2024-11-22,Road subsidence near park,resolved
+41,28.6618,77.4308,Street Light,Vaishali,2024-12-03,LED lights flickering constantly,open
+42,28.6658,77.4422,Water Supply,Raj Nagar,2024-11-28,Hard water quality issues,open
+43,28.6738,77.4522,Garbage,Vasundhara,2024-12-02,Medical waste dumped near residential area,open
+44,28.6588,77.4238,Drainage,Vaishali,2024-11-25,Manhole overflowing during rain,resolved
+45,28.6728,77.4508,Pothole,Vasundhara,2024-11-29,Speed breaker painted incorrectly,open
+46,28.6608,77.4298,Street Light,Vaishali,2024-12-01,No street lights near school dangerous,open
+47,28.6668,77.4438,Water Supply,Raj Nagar,2024-11-26,Water timing not followed,resolved
+48,28.6698,77.4468,Garbage,Indirapuram,2024-12-03,Plastic waste choking drainage,open
+49,28.6642,77.4378,Pothole,Raj Nagar,2024-11-30,Footpath broken pedestrian risk,open
+50,28.6712,77.4492,Street Light,Vasundhara,2024-11-27,Cable theft lights not working,open
+51,28.6628,77.4348,Drainage,Vaishali,2024-12-02,Green water pooling health hazard,open
+52,28.6688,77.4448,Water Supply,Indirapuram,2024-11-24,Low pressure in high-rise buildings,resolved
+53,28.6748,77.4538,Garbage,Vasundhara,2024-12-01,Burnt garbage smell air pollution,open
+54,28.6598,77.4268,Pothole,Vaishali,2024-11-28,Bike accident due to hidden pothole,open
+55,28.6678,77.4458,Street Light,Raj Nagar,2024-12-03,Street light control box damaged,open
+56,28.6708,77.4502,Water Supply,Vasundhara,2024-11-25,Rust in water supply pipes,open
+57,28.6618,77.4318,Garbage,Vaishali,2024-12-02,Dead animal on road not removed,open
+58,28.6652,77.4402,Drainage,Raj Nagar,2024-11-29,Tree roots blocking drain,open
+59,28.6732,77.4518,Pothole,Indirapuram,2024-11-26,Crater-like pothole near gate,resolved
+60,28.6608,77.4288,Street Light,Vaishali,2024-12-01,Smart lights malfunctioning,open
